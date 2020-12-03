@@ -1,0 +1,17 @@
+# [In roadmap]Workflow templates in private repositories (Future)
+# https://github.com/github/roadmap/projects/1?card_filter_query=label%3Aactions
+name: Citrix Organization CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run a one-line script
+        run: echo Hello from Citrix Organization
