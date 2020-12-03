@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Hello world action step
-        uses: Citrix-test/cicd-github-actions-test/action1
+        uses: Citrix-test/cicd-github-actions-test/action1@033c0fe
         id: hello
         with:
           who-to-greet: "Mona the Octocat"
@@ -34,7 +34,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Hello world action step
-        uses: Citrix-test/cicd-github-actions-test/action2 # Uses an action in the root directory
+        uses: Citrix-test/cicd-github-actions-test/action2@033c0fe # Uses an action in the root directory
         id: hello
         with:
           who-to-greet: "Mona the Octocat"
@@ -50,7 +50,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Hello world action step
-        uses: Citrix-test/cicd-github-actions-test/action2 # Uses an action in the root directory
+        uses: Citrix-test/cicd-github-actions-test/action2@033c0fe # Uses an action in the root directory
         id: hello
         with:
           who-to-greet: "Mona the Octocat"
