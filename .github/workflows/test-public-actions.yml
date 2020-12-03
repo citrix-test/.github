@@ -1,4 +1,4 @@
-name: Pacman-Jenkins-Bootstrap
+name: test-public-actions
 
 # Run this workflow every time a new commit pushed to your repository
 on: push
