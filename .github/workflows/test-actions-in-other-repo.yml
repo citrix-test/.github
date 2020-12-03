@@ -1,0 +1,59 @@
+name: test-actions-in-other-repo
+
+# Event: https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#deployment_status
+on: [push, pull_request]
+
+jobs:
+  # Set the job key. The key is displayed as the job name
+  # when a job name is not provided
+  action1:
+    # Name the Job
+    name: docker based action
+    # Set the type of machine to run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Hello world action step
+        uses: Citrix-test/cicd-github-actions-test/action1
+        id: hello
+        with:
+          who-to-greet: "Mona the Octocat"
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+  action2:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Hello world action step
+        uses: Citrix-test/cicd-github-actions-test/action2 # Uses an action in the root directory
+        id: hello
+        with:
+          who-to-greet: "Mona the Octocat"
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+  action3:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Hello world action step
+        uses: Citrix-test/cicd-github-actions-test/action2 # Uses an action in the root directory
+        id: hello
+        with:
+          who-to-greet: "Mona the Octocat"
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
